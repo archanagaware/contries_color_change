@@ -1,26 +1,31 @@
 body {
   color: black;
 }
- body.dark {
-   background: black;
- }
+
+body.dark {
+  background: black;
+}
 
 body.dark .topnav {
   overflow: hidden;
   background-color: black;
 }
 
-body.dark .topnav a{
+body.dark .topnav a {
   color: white;
 }
 
-body.dark .column,
-body.dark .column-8 {
+body.dark .column, body.dark .column-8 {
   color: white;
   box-shadow: none;
 }
+
+body.dark .column {
+  box-shadow: 0 2px 2px 2px gray;
+}
+
 .container {
-  width: 100%;
+  width: 85%;
   margin: 0 auto;
   display: block;
   position: relative;
@@ -28,11 +33,21 @@ body.dark .column-8 {
 
 .column {
   float: left;
-  width: 21%;
-  margin: 0 20px;
+  width: 23%;
+  margin-left: 20px;
   margin-bottom: 40px;
   box-shadow: 0 2px 2px 2px #d5d5d5;
   color: black
+}
+
+h2.name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.column.card {
+  height: 350px;
 }
 
 .column-4 {
@@ -57,13 +72,19 @@ body.dark .column-8 {
   display: block;
   margin-bottom: 20px;
 }
+
 .row.filters {
   margin: 0 20px;
   margin-bottom: 20px;
 }
 
-input {
+input{
   height: 30px;
+  font-size: 16px;
+}
+
+select {
+  height: 35px;
   font-size: 16px;
 }
 
@@ -79,6 +100,17 @@ button {
 .description {
   padding: 0 10px;
 }
+
+.description h2 {
+  margin: 0;
+}
+.properties {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
 .topnav {
   overflow: hidden;
   background-color: #ffffff;
@@ -118,15 +150,54 @@ button {
   float: left;
 }
 
-@media screen and (max-width: 600px) {
-  .topnav a{float: left !important;}
-  .pull-right,
-  .pull-left {
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  .topnav a {
+    float: left !important;
+  }
+  .pull-right, .pull-left {
     float: none;
   }
-  .column,
-  .column-4,
-  .column-8 {
+  .column, .column-4, .column-8 {
     width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+  .column, .column-4, .column-8 {
+    width: 100%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+  .column {
+    width: 46%;
+  }
+  .column-4 {
+    width: 25%;
+    float: left
+  }
+  .column-8 {
+    width: 58%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 961px) {
+  .column {
+    width: 23%;
+  }
+  .column-4 {
+    width: 25%;
+    float: left
+  }
+  .column-8 {
+    width: 63%;
+    float: left;
   }
 }

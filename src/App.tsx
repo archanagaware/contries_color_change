@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link, BrowserRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Detail from './components/Detail';
 import './App.css';
@@ -14,7 +14,7 @@ function App() {
           <Route path="/Detail/:id" component={Detail} />
         </Switch>
       </div>
-      </main>
+    </main>
   );
 }
 
