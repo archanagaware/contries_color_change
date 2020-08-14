@@ -50,9 +50,10 @@ body.dark button
 }
 
 .column {
+  width: 260px;
   float: left;
   border-radius: 5px;
-  margin-left: 20px;
+  margin: 0 20px;
   margin-bottom: 40px;
   box-shadow: 0 2px 2px 2px #d5d5d5;
   color: black
@@ -179,11 +180,20 @@ button {
   .row.filters {
     margin: 0;
   }
+  .row.filters input,
+  .row.filters select,
+  .row.filters button {
+    display: block;
+    margin-bottom: 20px;
+  }
   .topnav a {
     float: left !important;
   }
   .pull-right, .pull-left {
     float: none;
+  }
+  .column {
+    width: 300px
   }
   .column-4, .column-8 {
     width: 100%;
@@ -197,7 +207,7 @@ button {
 @media only screen and (min-width: 768px) {
   .column {
     width: 260px;
-    margin-right: 46px;
+    margin-right: 27px;
   }
   .column-4 {
     width: 25%;
@@ -209,17 +219,24 @@ button {
   }
 }
 
-@media only screen and (min-width: 961px) {
+@media only screen  and (min-width : 1224px)  {
   .column {
-    width: 264px;
+    width: 280px;
     margin-right: auto;
   }
   .column-4 {
-    width: 25%;
+    width: 30%;
     float: left
   }
   .column-8 {
     width: 63%;
     float: left;
+  }
+}
+
+@media only screen  and (min-width : 1824px) {
+  .column {
+    width: 280px;
+    margin-right: auto;
   }
 }
