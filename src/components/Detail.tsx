@@ -40,19 +40,19 @@ export default class Detail extends React.Component<State> {
             <h2>{this.state.contry["name"]}</h2>
             <table>
               <tr>
-                <td>
-                  <h4>
-                    Native Name : {this.state.contry["nativeName"]}
-                    <br />
-                    Population : {this.state.contry["population"]}
-                    <br />
-                    Region : {this.state.contry["region"]}
-                    <br />
-                    Sub Region : {this.state.contry["subregion"]}
-                    <br />
-                    Capital : {this.state.contry["capital"]}
-                  </h4>
-                </td>
+                <td><b>Native Name</b> : {this.state.contry["nativeName"]}</td>
+              </tr>
+              <tr>
+                <td><b>Population</b> : {this.state.contry["population"]}</td>
+              </tr>
+              <tr>
+                <td><b>Region</b> : {this.state.contry["region"]}</td>
+              </tr>
+              <tr>
+                <td><b>Sub Region</b> : {this.state.contry["subregion"]}</td>
+              </tr>
+              <tr>
+                <td><b>Capital</b> : {this.state.contry["capital"]}</td>
               </tr>
             </table>
           </div>
