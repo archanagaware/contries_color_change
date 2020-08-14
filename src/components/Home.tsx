@@ -28,9 +28,11 @@ export default class Home extends Component<State> {
     })
   };
   handleListChange = (event) => {
-    this.setState({
-        region: event.target.value
-    })
+    if(event.target.value != "All"){
+        this.setState({
+            region: event.target.value
+        })
+    }
   };
   render() {
     let contries_list = this.state.contries;
@@ -63,7 +65,7 @@ export default class Home extends Component<State> {
             id="searchRegion"
             onChange={this.handleListChange}
           >
-            <option defaultChecked>Filter By Region</option>
+            <option defaultChecked value={"All"}>Filter By Region</option>
             <option value={"Africa"}>Africa</option>
             <option value={"America"}>America</option>
             <option value={"Asia"}>Asia</option>
