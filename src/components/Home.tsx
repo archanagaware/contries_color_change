@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import SearchField from "react-search-field";
 
 interface State {
   searchString: "";
   region: "";
-  contries: any[];
+  contries: Array<String>;
 }
 
 export default class Home extends Component<State> {
@@ -23,18 +22,15 @@ export default class Home extends Component<State> {
         });
       });
   }
-  handleChange = () => {
+  handleChange = (event) => {
     this.setState({
-      searchString: (document.getElementById("searchId") as HTMLInputElement)
-        .value,
-    });
+        searchString: event.target.value
+    })
   };
-  handleListChange = () => {
-    var regionName = document.getElementById("searchRegion") as HTMLInputElement
+  handleListChange = (event) => {
     this.setState({
-      region: (document.getElementById("searchRegion") as HTMLInputElement)
-        .value,
-    });
+        region: event.target.value
+    })
   };
   render() {
     let contries_list = this.state.contries;
@@ -43,12 +39,12 @@ export default class Home extends Component<State> {
     console.log(region);
     if (search.length > 0) {
       contries_list = contries_list.filter(function (user) {
-        return user.name.toLowerCase().match(search);
+        return user['name'].toLowerCase().match(search);
       });
     }
     if (region.length > 0) {
       contries_list = contries_list.filter(function (user) {
-        return user.region.toLowerCase().match(region);
+        return user['region'].toLowerCase().match(region);
       });
     }
     return (
@@ -79,19 +75,19 @@ export default class Home extends Component<State> {
           {contries_list.map((contry: any) => {
             return (
               <div className="row">
-                <Link to={`/Detail/${contry.cioc}`}>
+                <Link to={`/Detail/${contry.alpha3Code}`}>
                   <div className="column card">
                     <img src={contry.flag} />
                     <div className="description">
                       <h2 className="name">{contry.name}</h2>
                       <span className="properties">
-                        Population : {contry.population}
+                        <b>Population</b> : {contry.population}
                       </span>
                       <span className="properties">
-                        Region : {contry.region}
+                        <b>Region</b> : {contry.region}
                       </span>
                       <span className="properties">
-                        Capital : {contry.capital}
+                        <b>Capital</b> : {contry.capital}
                       </span>
                     </div>
                   </div>
