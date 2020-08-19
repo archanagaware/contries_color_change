@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Countries } from "./Countries";
 
 interface State {
   searchString: "";
   region: "";
-  contries: Array<String>;
+  contries: Countries[];
 }
 
 export default class Home extends Component<State> {
@@ -73,12 +74,14 @@ export default class Home extends Component<State> {
             <option value={"Oceania"}>Oceania</option>
           </select>
         </div>
-        <div className="row">
+        <div className="row flex-container">
           {contries_list.map((contry: any) => {
             return (
-              <div className="row">
-                <Link to={`/Detail/${contry.alpha3Code}`}>
-                  <div className="column card">
+              
+              <div className="column flex-item card">
+                <Link to={{pathname: `/Detail`, state: { 
+                      contry: contry
+                    }}} >
                     <img src={contry.flag} />
                     <div className="description">
                       <h2 className="name">{contry.name}</h2>
@@ -92,9 +95,8 @@ export default class Home extends Component<State> {
                         <b>Capital</b> : {contry.capital}
                       </span>
                     </div>
-                  </div>
                 </Link>
-              </div>
+                  </div>
             );
           })}
         </div>

@@ -23,6 +23,8 @@ export default class Navbar extends React.Component<State> {
   }
   render() {
     return (
+      <div className="container-fluid">
+      <div className="container">
       <nav className="topnav" id="myTopnav">
         <a href="javascript;" className="pull-left">
           Where In The World?
@@ -31,6 +33,8 @@ export default class Navbar extends React.Component<State> {
           Dark Mode
         </a>
       </nav>
+      </div>
+      </div>
     );
   }
 }
