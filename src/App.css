@@ -31,8 +31,16 @@ body.dark {
 
 body.dark .column {
   background-color: #222E44;
+  color: #ffffff
 }
-
+body.dark .column a {
+  color: #ffffff;
+  text-decoration: none;
+}
+body .column a {
+  color: #000000;
+  text-decoration: none;
+}
 body.dark input, 
 body.dark select,
 body.dark button
@@ -41,7 +49,11 @@ body.dark button
   border: 1px solid #222E44;
   color: #ffffff;
 }
-
+.container-fluid {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 8px 6px -10px black;
+}
 .container {
   width: 90%;
   margin: 0 auto;
@@ -51,14 +63,20 @@ body.dark button
 
 .column {
   width: 260px;
-  float: left;
   border-radius: 5px;
   margin: 0 20px;
   margin-bottom: 40px;
   box-shadow: 0 2px 2px 2px #d5d5d5;
   color: black
 }
-
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 h2.name {
   white-space: nowrap;
   overflow: hidden;
@@ -138,7 +156,6 @@ button {
 .topnav {
   overflow: hidden;
   background-color: #ffffff;
-  box-shadow: 0 8px 6px -10px black;
   margin-bottom: 30px;
 }
 
@@ -207,7 +224,6 @@ button {
 @media only screen and (min-width: 768px) {
   .column {
     width: 260px;
-    margin-right: 27px;
   }
   .column-4 {
     width: 25%;
@@ -219,10 +235,9 @@ button {
   }
 }
 
-@media only screen  and (min-width : 1224px)  {
+@media only screen  and (max-width : 1224px)  {
   .column {
     width: 280px;
-    margin-right: auto;
   }
   .column-4 {
     width: 30%;
@@ -236,7 +251,6 @@ button {
 
 @media only screen  and (min-width : 1824px) {
   .column {
-    width: 280px;
-    margin-right: auto;
+    width: 330px;
   }
 }
