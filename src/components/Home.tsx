@@ -19,7 +19,7 @@ export default class Home extends Component<State> {
       .then((res) => res.json())
       .then((result) => {
         this.setState({
-          contries: [] = result,
+          contries: result,
         });
       });
   }
@@ -29,7 +29,7 @@ export default class Home extends Component<State> {
     })
   };
   handleListChange = (event) => {
-    if(event.target.value != "All"){
+    if(event.target.value !== "All"){
         this.setState({
             region: event.target.value
         })
@@ -75,14 +75,14 @@ export default class Home extends Component<State> {
           </select>
         </div>
         <div className="row flex-container">
-          {contries_list.map((contry: any) => {
+          {contries_list.map((contry: any, i) => {
             return (
               
-              <div className="column flex-item card">
+              <div className="column flex-item card" key={i}>
                 <Link to={{pathname: `/Detail`, state: { 
                       contry: contry
                     }}} >
-                    <img src={contry.flag} />
+                    <img src={contry.flag} alt="Country Flag"/>
                     <div className="description">
                       <h2 className="name">{contry.name}</h2>
                       <span className="properties">
